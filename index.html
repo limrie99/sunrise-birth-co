@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sunrise Birth Co — Faith-Based Doula | Waco, TX</title>
+  <meta name="description" content="Sunrise Birth Co. — faith-based birth, prenatal, and postpartum doula support in Waco, Texas. Trust God, trust your body, and walk into birth confident and supported.">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --display: 'Jost', sans-serif;
+      --body: 'Outfit', sans-serif;
+      /* Sunrise palette */
+      --cream: #FEFBF7;
+      --warm:  #F9F1E8;
+      --accent: #E58368;
+      --accent-deep: #7A4438;
+      --text: #5C4A3A;
+      --text-soft: #8A7460;
+      --line: rgba(122,68,56,.14);
+      --g1: #FBEEDF; --g2: #F7DBCB; --g3: #F0C6BC;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--cream); color: var(--text); overflow-x: hidden; font-family: var(--body); }
+    a { text-decoration: none; color: inherit; }
+    a:hover { color: var(--accent); }
+    img { max-width: 100%; }
+    section { position: relative; }
+
+    /* ---------- Nav ---------- */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; transition: all .4s ease;
+      background: transparent; border-bottom: 1px solid transparent; }
+    .nav.scrolled { background: color-mix(in srgb, var(--cream) 90%, transparent);
+      backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+    .nav-inner { max-width: 1240px; margin: 0 auto; padding: 0 40px; height: 84px;
+      display: flex; align-items: center; justify-content: space-between; }
+    .nav-left, .nav-right { display: flex; gap: 34px; flex: 1; align-items: center; }
+    .nav-right { justify-content: flex-end; }
+    .nav-link { font-family: var(--body); font-size: 12px; letter-spacing: .16em;
+      text-transform: uppercase; color: var(--text); cursor: pointer; transition: color .2s; background: none; border: none; }
+    .nav-logo { cursor: pointer; padding: 0 24px; display: flex; align-items: center; }
+    .nav-logo img { height: 56px; width: auto; display: block; }
+    .btn-inquire { font-family: var(--body); font-size: 11px; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--cream); background: var(--accent); border: none;
+      border-radius: 100px; padding: 11px 22px; cursor: pointer; transition: all .3s ease; }
+    .btn-inquire:hover { background: var(--accent-deep); color: var(--cream); }
+    .nav-burger { display: none; background: none; border: none; cursor: pointer; }
+
+    .mobile-menu { position: fixed; inset: 0; z-index: 99; background: var(--cream);
+      display: none; flex-direction: column; align-items: center; justify-content: center; gap: 28px; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-family: var(--display); font-size: 34px; color: var(--accent-deep); cursor: pointer; }
+
+    /* ---------- Buttons ---------- */
+    .cta-primary { font-family: var(--body); font-size: 12px; letter-spacing: .16em; text-transform: uppercase;
+      color: var(--cream); background: var(--accent); border: none; border-radius: 100px;
+      padding: 16px 34px; cursor: pointer; transition: all .3s ease;
+      box-shadow: 0 8px 24px color-mix(in srgb, var(--accent) 22%, transparent); }
+    .cta-primary:hover { transform: translateY(-2px); color: var(--cream);
+      box-shadow: 0 14px 34px color-mix(in srgb, var(--accent) 32%, transparent); }
+    .cta-ghost { font-family: var(--body); font-size: 12px; letter-spacing: .16em; text-transform: uppercase;
+      color: var(--accent-deep); background: transparent; border: 1.5px solid var(--accent-deep);
+      border-radius: 100px; padding: 14.5px 32px; cursor: pointer; transition: all .3s ease; }
+    .cta-ghost:hover { background: var(--accent-deep); color: var(--cream); }
+
+    /* ---------- Shared type ---------- */
+    .eyebrow { font-family: var(--body); font-size: 12px; letter-spacing: .28em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 18px; }
+    .h2 { font-family: var(--display); font-weight: 500; font-size: clamp(34px,4.5vw,54px);
+      line-height: 1.08; letter-spacing: -.015em; color: var(--accent-deep); margin: 0; }
+    .accent { color: var(--accent); }
+    .body-para { font-family: var(--body); font-size: 16px; line-height: 1.8; color: var(--text-soft); margin: 0 0 18px; }
+
+    /* ---------- Hero ---------- */
+    .hero { min-height: 100vh; overflow: hidden; display: flex; flex-direction: column;
+      background: linear-gradient(180deg, #FFFFFF 0%, var(--cream) 52%, var(--g1) 100%); }
+    .hero-inner { position: relative; z-index: 2; flex: 1; max-width: 1100px; margin: 0 auto;
+      padding: 150px 40px 60px; text-align: center; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; }
+    .hero-logo { width: min(380px, 82vw); height: auto; margin-bottom: 18px; }
+    .hero-kicker { font-family: var(--body); font-size: 12px; letter-spacing: .32em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 30px; }
+    .hero h1 { font-family: var(--display); font-weight: 500; font-size: clamp(34px, 4vw, 52px);
+      line-height: 1.12; letter-spacing: -.01em; text-wrap: balance; max-width: 860px; color: rgb(146,102,102); }
+    .hero-sub { font-family: var(--display); font-size: clamp(19px,2.4vw,24px); line-height: 1.6;
+      color: var(--text-soft); max-width: 600px; margin: 28px 0 0; }
+    .hero-cta { display: flex; gap: 16px; margin-top: 44px; flex-wrap: wrap; justify-content: center; }
+    .hero-strip { position: relative; z-index: 2; padding: 0 40px 40px; text-align: center;
+      font-family: var(--body); font-size: 11px; letter-spacing: .25em; text-transform: uppercase;
+      color: var(--accent-deep); opacity: .7; }
+
+    /* fade-in */
+    .fade { opacity: 0; transform: translateY(24px); transition: all .9s cubic-bezier(.2,.7,.2,1); }
+    .hero.show .fade { opacity: 1; transform: translateY(0); }
+    .hero.show .d05 { transition-delay: .05s; }
+    .hero.show .d15 { transition-delay: .15s; }
+    .hero.show .d30 { transition-delay: .30s; }
+    .hero.show .d45 { transition-delay: .45s; }
+    .hero.show .d60 { transition-delay: .60s; }
+    .hero.show .d80 { transition-delay: .80s; }
+
+    /* ---------- About ---------- */
+    .about { padding: 130px 40px; background: var(--cream); }
+    .about-grid { max-width: 1080px; margin: 0 auto; display: grid;
+      grid-template-columns: 0.85fr 1fr; gap: 80px; align-items: center; }
+    .portrait-wrap { display: flex; justify-content: center; }
+    .portrait { width: 340px; height: 460px; border-radius: 170px 170px 16px 16px;
+      background: linear-gradient(168deg, var(--g2) 0%, var(--g3) 100%); position: relative;
+      display: flex; align-items: flex-end; justify-content: center; padding: 22px;
+      box-shadow: 0 24px 60px color-mix(in srgb, var(--accent-deep) 20%, transparent); }
+    .portrait::after { content: ""; position: absolute; inset: 14px; border-radius: 156px 156px 8px 8px;
+      border: 1px solid color-mix(in srgb, var(--cream) 60%, transparent); pointer-events: none; }
+    .portrait span { font-family: var(--body); font-size: 12px; letter-spacing: .1em; color: var(--cream); opacity: .8; }
+    .about h2 { font-family: var(--display); font-weight: 500; font-size: clamp(28px,3.4vw,40px);
+      line-height: 1.15; letter-spacing: -.015em; color: var(--accent-deep); margin: 0 0 24px; }
+
+    /* ---------- Doula 101 ---------- */
+    .doula { padding: 130px 40px; background: var(--warm); }
+    .doula-grid { max-width: 1040px; margin: 0 auto; display: grid;
+      grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .doula h2 { margin-top: 0; }
+    .framed { position: relative; border: 1px solid var(--accent); background: var(--cream); padding: 18px; }
+    .framed::before { content: ""; position: absolute; inset: 9px; border: .5px solid var(--accent);
+      opacity: .4; pointer-events: none; }
+    .framed-body { position: relative; padding: 32px 32px 36px; }
+    .framed-label { font-family: var(--body); font-size: 11px; letter-spacing: .22em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+    .framed-lead { font-family: var(--display); font-size: 21px; line-height: 1.45; color: var(--accent-deep); margin-bottom: 24px; }
+    .check-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+    .check-list li { display: flex; align-items: flex-start; gap: 12px; font-family: var(--body);
+      font-size: 15px; line-height: 1.5; color: var(--text); }
+    .check-list li .mark { color: var(--accent); font-size: 13px; margin-top: 3px; }
+
+    /* ---------- Services ---------- */
+    .services { padding: 130px 40px; background: linear-gradient(180deg, var(--cream) 0%, var(--warm) 100%); }
+    .services-head { text-align: center; margin-bottom: 56px; }
+    .services-wrap { max-width: 860px; margin: 0 auto; }
+    .package-body { position: relative; padding: 40px 40px 44px; }
+    .package-title { text-align: center; margin-bottom: 40px; }
+    .package-title h3 { font-family: var(--display); font-size: clamp(30px,4vw,42px); font-weight: 500;
+      color: var(--accent-deep); margin: 0; }
+    .package-title p { font-family: var(--body); font-size: 15px; line-height: 1.7; color: var(--text-soft);
+      max-width: 500px; margin: 14px auto 0; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 28px; margin-bottom: 42px; }
+    .svc { text-align: center; }
+    .svc-icon { width: 44px; height: 44px; border-radius: 50%;
+      background: color-mix(in srgb, var(--accent) 16%, transparent); display: flex; align-items: center;
+      justify-content: center; margin: 0 auto 14px; color: var(--accent); font-size: 16px; }
+    .svc h4 { font-family: var(--display); font-size: 21px; font-weight: 500; color: var(--accent-deep); margin-bottom: 8px; }
+    .svc p { font-family: var(--body); font-size: 13.5px; line-height: 1.65; color: var(--text-soft); margin-bottom: 16px; }
+    .svc ul { list-style: none; padding: 0; margin: 0 auto; display: inline-grid; gap: 8px; text-align: left; }
+    .svc ul li { display: flex; align-items: flex-start; gap: 9px; font-family: var(--body);
+      font-size: 13px; line-height: 1.5; color: var(--text); }
+    .svc ul li .mark { color: var(--accent); font-size: 11px; margin-top: 2px; }
+    .price { font-family: var(--display); font-size: clamp(24px,3vw,30px); font-weight: 500; color: var(--accent); line-height: 1; }
+    .price-label { font-family: var(--body); font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
+      color: var(--text-soft); margin: 8px 0 24px; }
+    .price-note { font-family: var(--body); font-size: 12.5px; line-height: 1.6; color: var(--text-soft); margin-top: 16px; }
+
+    /* ---------- Testimonials ---------- */
+    .testimonials { padding: 130px 40px; background: var(--cream); }
+    .testimonials-inner { max-width: 820px; margin: 0 auto; text-align: center; }
+    .quote-card { position: relative; border: 1px solid var(--accent); padding: 56px 50px;
+      background: linear-gradient(180deg,var(--cream),var(--g1)); }
+    .quote-card::before { content: ""; position: absolute; inset: 9px; border: .5px solid var(--accent);
+      opacity: .4; pointer-events: none; }
+    .quote-mark { font-family: var(--display); font-size: 56px; color: var(--accent); line-height: .5; opacity: .5; margin-bottom: 18px; }
+    .quote-stage { position: relative; min-height: 150px; }
+    .quote { position: absolute; inset: 0; opacity: 0; transition: opacity .7s ease; pointer-events: none; }
+    .quote.active { position: relative; inset: auto; opacity: 1; pointer-events: auto; }
+    .quote p { font-family: var(--display); font-size: clamp(20px,2.6vw,27px); line-height: 1.55;
+      color: var(--accent-deep); margin: 0 0 28px; }
+    .quote .who { font-family: var(--body); font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }
+    .quote .detail { font-family: var(--display); font-size: 16px; color: var(--text-soft); margin-top: 4px; }
+    .dots { display: flex; gap: 8px; justify-content: center; margin-top: 32px; }
+    .dots button { width: 8px; height: 8px; border-radius: 100px; border: none; cursor: pointer; padding: 0;
+      background: color-mix(in srgb, var(--accent) 30%, transparent); transition: all .3s ease; }
+    .dots button.active { width: 30px; background: var(--accent); }
+
+    /* ---------- Contact ---------- */
+    .contact { padding: 130px 40px; background: linear-gradient(180deg,var(--cream) 0%, var(--g1) 100%); }
+    .contact-grid { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr;
+      gap: 72px; align-items: start; }
+    .contact-logo { width: 220px; height: auto; display: block; margin-bottom: 24px; }
+    .contact h2 { margin: 0; }
+    .contact-info { display: grid; gap: 22px; }
+    .contact-info .lbl { font-family: var(--body); font-size: 11px; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 5px; }
+    .contact-info .val { font-family: var(--display); font-size: 18px; color: var(--accent-deep); }
+    form.inquiry { display: grid; gap: 16px; background: var(--cream); border: 1px solid var(--line);
+      border-radius: 10px; padding: 36px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .inquiry input, .inquiry select, .inquiry textarea { width: 100%; padding: 14px 18px;
+      font-family: var(--body); font-size: 15px; color: var(--text); background: var(--cream);
+      border: 1px solid var(--line); border-radius: 8px; outline: none; transition: border-color .3s; }
+    .inquiry select { appearance: none; }
+    .inquiry textarea { min-height: 120px; resize: vertical; }
+    .inquiry input:focus, .inquiry select:focus, .inquiry textarea:focus { border-color: var(--accent); }
+    .inquiry .cta-primary { padding: 16px; width: 100%; border-radius: 100px; }
+    .thanks { border: 1px solid var(--accent); padding: 50px; text-align: center; background: var(--cream); position: relative; }
+    .thanks::before { content: ""; position: absolute; inset: 9px; border: .5px solid var(--accent); opacity: .4; }
+    .thanks .dove { font-size: 44px; margin-bottom: 14px; }
+    .thanks h3 { font-family: var(--display); font-size: 30px; color: var(--accent-deep); margin: 0 0 12px; }
+    .thanks p { font-family: var(--body); font-size: 15px; line-height: 1.7; color: var(--text-soft); }
+    .hidden { display: none !important; }
+
+    /* ---------- Footer ---------- */
+    .footer { padding: 56px 40px 44px; background: var(--cream); color: var(--text); border-top: 1px solid var(--line); }
+    .footer-inner { max-width: 1080px; margin: 0 auto; display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; gap: 24px; }
+    .footer img { height: 60px; width: auto; display: block; margin-bottom: 10px; }
+    .footer .tag { font-family: var(--body); font-size: 12px; letter-spacing: .05em; color: var(--text-soft); }
+    .footer .verse { font-family: var(--display); font-size: 18px; color: var(--accent); }
+    .footer .copy { font-family: var(--body); font-size: 11px; letter-spacing: .05em; color: var(--text-soft); }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 860px) {
+      .nav-left, .nav-right { display: none; }
+      .nav-burger { display: block; }
+      .about-grid, .doula-grid, .contact-grid { grid-template-columns: 1fr; gap: 44px; }
+      .cards { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===================== NAV ===================== -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <div class="nav-left">
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#services">The Package</a>
+      </div>
+      <a class="nav-logo" href="#home">
+        <img src="assets/logo-name.png" alt="Sunrise Birth Co. — Doula Support">
+      </a>
+      <div class="nav-right">
+        <a class="nav-link" href="#testimonials">Testimonials</a>
+        <a class="btn-inquire" href="#contact">Inquire</a>
+      </div>
+      <button class="nav-burger" id="burger" aria-label="Menu">
+        <svg width="26" height="26" viewBox="0 0 26 26"><path d="M4 8h18M4 13h18M4 18h18" stroke="var(--accent-deep)" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">The Package</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <img class="hero-logo fade d05" src="assets/logo-name.png" alt="Sunrise Birth Co. — Doula Support">
+      <div class="hero-kicker fade d15">Faith-Based Doula · Waco, Texas</div>
+      <h1 class="fade d30">Doula support for a faith-filled, hope-filled, <span class="accent">empowered birth.</span></h1>
+      <p class="hero-sub fade d45">Helping you trust God, trust your body, and walk into birth feeling
+        confident and supported — because with God, anything is possible.</p>
+      <div class="hero-cta fade d60">
+        <a class="cta-primary" href="#contact">Book a Free Consultation</a>
+        <a class="cta-ghost" href="#about">Meet Lexa</a>
+      </div>
+    </div>
+    <div class="hero-strip fade d80">
+      Birth Doula &nbsp;·&nbsp; Postpartum &nbsp;·&nbsp; Prenatal &nbsp;·&nbsp; Faith-Centered
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section class="about" id="about">
+    <div class="about-grid">
+      <div class="portrait-wrap">
+        <!-- Swap this arched block for a photo of Lexa when available -->
+        <div class="portrait"><span>Portrait of Lexa</span></div>
+      </div>
+      <div>
+        <div class="eyebrow">About</div>
+        <h2>Meet <span class="accent">Lexa</span></h2>
+        <p class="body-para">Hi, I'm Lexa. I'm a mom of 2 little ones, a wife to my awesome husband,
+          a lover of Jesus, and a part-time home designer. But birth is where my passion truly lies.</p>
+        <p class="body-para">I became a doula because I believe birth can be so much more than
+          what most of us have been told.</p>
+        <p class="body-para">I believe birth was meant to be hopeful, joyful, and deeply
+          transformational — not because it's easy, but because women are far more capable than
+          they've been led to believe. So many women enter birth expecting fear, confusion, or
+          simply “getting through it.”</p>
+        <p class="body-para">But I believe birth is a new opportunity to experience the goodness
+          of God in a deeper way. Just like His mercies are new every morning, each birth holds
+          the possibility for redemption, growth, strength, and transformation.</p>
+        <p class="body-para">So I decided to become the kind of doula I want my friends to have —
+          support that is joyful, peaceful, and steady, come what may.</p>
+        <p class="body-para accent" style="margin:0;">And that is how Sunrise Birth Co. began.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== DOULA 101 ===================== -->
+  <section class="doula" id="doula">
+    <div class="doula-grid">
+      <div>
+        <div class="eyebrow">Doula 101</div>
+        <h2 class="h2">What is a <span class="accent">doula?</span></h2>
+        <p class="body-para" style="margin-top:22px;">A doula is a non-clinical support person who
+          provides physical, emotional, and spiritual support to pregnant and birthing mothers —
+          and serves as an advocate for moms during their births.</p>
+        <p class="body-para">As a doula, I'm extensively trained in the physiology of birth, and can
+          help you minimize pain through optimal fetal positioning, relaxation, and targeted
+          pain-relief strategies.</p>
+      </div>
+      <div class="framed">
+        <div class="framed-body">
+          <div class="framed-label">Backed by research</div>
+          <p class="framed-lead">Studies show continuous doula support leads to:</p>
+          <ul class="check-list">
+            <li><span class="mark">✦</span>A reduced likelihood of cesarean sections</li>
+            <li><span class="mark">✦</span>Decreased need for pain-relief medications</li>
+            <li><span class="mark">✦</span>Shorter labor durations on average</li>
+            <li><span class="mark">✦</span>Higher satisfaction with the birth experience</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SERVICES ===================== -->
+  <section class="services" id="services">
+    <div class="services-wrap">
+      <div class="services-head">
+        <div class="eyebrow">The Package</div>
+        <h2 class="h2" style="text-align:center;">How I can <span class="accent">serve you</span></h2>
+        <p class="body-para" style="max-width:540px;margin:10px auto 0;text-align:center;">
+          One intentional offering — full doula support from pregnancy through those first tender
+          days, walked through together.</p>
+      </div>
+      <div class="framed">
+        <div class="package-body">
+          <div class="package-title">
+            <h3>Doula Support</h3>
+            <p>Evidence-based, prayerful support so you can trust God, trust your body, and feel
+              held every step of the way.</p>
+          </div>
+          <div class="cards">
+            <div class="svc">
+              <div class="svc-icon">✦</div>
+              <h4>Prenatal</h4>
+              <p>Preparing your heart, body, and birth plan so you feel ready and unafraid.</p>
+              <ul>
+                <li><span class="mark">✦</span>Create a birth plan</li>
+                <li><span class="mark">✦</span>2–3 prenatal visits</li>
+                <li><span class="mark">✦</span>Optional childbirth education course</li>
+              </ul>
+            </div>
+            <div class="svc">
+              <div class="svc-icon">✦</div>
+              <h4>Birth</h4>
+              <p>By your side through labor and delivery — for you and your husband both.</p>
+              <ul>
+                <li><span class="mark">✦</span>On call for your birth, 37–42 weeks</li>
+                <li><span class="mark">✦</span>Continuous physical, emotional, and spiritual labor support</li>
+                <li><span class="mark">✦</span>Physiological techniques to help baby get in optimal position</li>
+              </ul>
+            </div>
+            <div class="svc">
+              <div class="svc-icon">✦</div>
+              <h4>Postpartum</h4>
+              <p>Gentle, nourishing care as you settle into the fourth trimester.</p>
+              <ul>
+                <li><span class="mark">✦</span>Follow-up visit (with a meal!) 1–2 days after birth</li>
+                <li><span class="mark">✦</span>Breastfeeding support</li>
+                <li><span class="mark">✦</span>A listening ear</li>
+              </ul>
+            </div>
+          </div>
+          <div style="text-align:center;">
+            <div class="price">$750</div>
+            <div class="price-label">Complete doula support package</div>
+            <a class="cta-primary" href="#contact" style="display:inline-block;padding:15px 38px;">Book a Free Consultation</a>
+            <p class="price-note">In person or online — whatever's easiest for you.<br>Payment plans available.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TESTIMONIALS ===================== -->
+  <section class="testimonials" id="testimonials">
+    <div class="testimonials-inner">
+      <div class="eyebrow">Kind Words</div>
+      <h2 class="h2" style="text-align:center;margin-bottom:50px;">What mamas are <span class="accent">saying</span></h2>
+      <div class="quote-card">
+        <div class="quote-mark">“</div>
+        <div class="quote-stage" id="quoteStage">
+          <div class="quote active">
+            <p>Lexa was an absolute gift during my birth. Her calm presence and constant prayers gave me strength I didn't know I had. She truly helped me trust God's plan.</p>
+            <div class="who">Sarah M.</div>
+            <div class="detail">First-time mama</div>
+          </div>
+          <div class="quote">
+            <p>Having Lexa by my side was the best decision we made. She honored our faith and made us feel so supported. We felt like we had a guardian angel in the room.</p>
+            <div class="who">Rachel T.</div>
+            <div class="detail">Mama of three</div>
+          </div>
+          <div class="quote">
+            <p>After a difficult first experience, Lexa helped me process my fears and reminded me God designed my body for this. It was truly transformative.</p>
+            <div class="who">Emily K.</div>
+            <div class="detail">VBAC mama</div>
+          </div>
+        </div>
+      </div>
+      <div class="dots" id="dots">
+        <button class="active" aria-label="Testimonial 1"></button>
+        <button aria-label="Testimonial 2"></button>
+        <button aria-label="Testimonial 3"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section class="contact" id="contact">
+    <div class="contact-grid">
+      <div>
+        <img class="contact-logo" src="assets/logo-name.png" alt="Sunrise Birth Co. — Doula Support">
+        <div class="eyebrow">Get in Touch</div>
+        <h2 class="h2">Let's start your<br><span class="accent">birth story.</span></h2>
+        <p class="body-para" style="margin:24px 0 44px;max-width:380px;">I'd love to hear from you.
+          Book a free consultation and let's chat about how I can support your journey to motherhood.</p>
+        <div class="contact-info">
+          <div><div class="lbl">Email</div><div class="val">hello@sunrisebirthco.com</div></div>
+          <div><div class="lbl">Location</div><div class="val">Waco, Texas &amp; surrounding areas</div></div>
+          <div><div class="lbl">Social</div><div class="val">@sunrisebirthco</div></div>
+        </div>
+      </div>
+      <div>
+        <form class="inquiry" id="inquiryForm">
+          <div class="form-row">
+            <input placeholder="Your name" required name="name">
+            <input type="email" placeholder="Email" required name="email">
+          </div>
+          <div class="form-row">
+            <input placeholder="Phone" name="phone">
+            <input placeholder="Due date" name="due">
+          </div>
+          <select name="service">
+            <option value="">What service interests you?</option>
+            <option>Birth Doula</option>
+            <option>Postpartum Doula</option>
+            <option>Both</option>
+            <option>Not sure yet</option>
+          </select>
+          <textarea placeholder="Tell me about yourself and your birth hopes…" name="message"></textarea>
+          <button type="submit" class="cta-primary">Book Your Free Consultation</button>
+        </form>
+        <div class="thanks hidden" id="thanks">
+          <div class="dove">🕊️</div>
+          <h3>Thank you!</h3>
+          <p>I'll be in touch within 24 hours. I can't wait to connect with you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <img src="assets/logo-name.png" alt="Sunrise Birth Co.">
+        <p class="tag">Faith-based doula services in Waco, Texas</p>
+      </div>
+      <p class="verse">His mercies are new each morning.</p>
+      <p class="copy">© 2026 Sunrise Birth Co.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll state
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 30));
+
+    // Mobile menu
+    const burger = document.getElementById('burger');
+    const menu = document.getElementById('mobileMenu');
+    burger.addEventListener('click', () => menu.classList.toggle('open'));
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+
+    // Hero reveal
+    requestAnimationFrame(() => setTimeout(() => document.getElementById('home').classList.add('show'), 80));
+
+    // Testimonial carousel
+    const quotes = [...document.querySelectorAll('#quoteStage .quote')];
+    const dots = [...document.querySelectorAll('#dots button')];
+    let idx = 0, timer;
+    function show(n) {
+      idx = (n + quotes.length) % quotes.length;
+      quotes.forEach((q, i) => q.classList.toggle('active', i === idx));
+      dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+    }
+    function start() { timer = setInterval(() => show(idx + 1), 6500); }
+    dots.forEach((d, i) => d.addEventListener('click', () => { clearInterval(timer); show(i); start(); }));
+    start();
+
+    // Contact form
+    document.getElementById('inquiryForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      document.getElementById('inquiryForm').classList.add('hidden');
+      document.getElementById('thanks').classList.remove('hidden');
+    });
+  </script>
+</body>
+</html>
