@@ -109,7 +109,7 @@
       grid-template-columns: 0.85fr 1fr; gap: 80px; align-items: center; }
     .portrait-wrap { display: flex; justify-content: center; }
     .portrait { width: 340px; height: 460px; border-radius: 170px 170px 16px 16px;
-      background: linear-gradient(168deg, var(--g2) 0%, var(--g3) 100%); position: relative;
+      background: url('assets/lexa.jpg') center/cover; position: relative;
       display: flex; align-items: flex-end; justify-content: center; padding: 22px;
       box-shadow: 0 24px 60px color-mix(in srgb, var(--accent-deep) 20%, transparent); }
     .portrait::after { content: ""; position: absolute; inset: 14px; border-radius: 156px 156px 8px 8px;
@@ -278,8 +278,7 @@
   <section class="about" id="about">
     <div class="about-grid">
       <div class="portrait-wrap">
-        <!-- Swap this arched block for a photo of Lexa when available -->
-        <div class="portrait"><span>Portrait of Lexa</span></div>
+        <div class="portrait" role="img" aria-label="Lexa, faith-based doula, holding her baby in the mountains"></div>
       </div>
       <div>
         <div class="eyebrow">About</div>
