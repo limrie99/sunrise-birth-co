@@ -151,8 +151,8 @@
     .about-grid { max-width: 1080px; margin: 0 auto; display: grid;
       grid-template-columns: 0.85fr 1fr; gap: 80px; align-items: center; }
     .portrait-wrap { display: flex; justify-content: center; }
-    .portrait { width: 340px; height: 460px; border-radius: 170px 170px 16px 16px;
-      background: url('assets/lexa.jpg') center/cover; position: relative;
+    .portrait { width: min(340px, 68vw); aspect-ratio: 340 / 460; border-radius: 170px 170px 16px 16px;
+      background: url('assets/lexa.jpg') center 30%/cover; position: relative;
       display: flex; align-items: flex-end; justify-content: center; padding: 22px;
       box-shadow: 0 24px 60px color-mix(in srgb, var(--accent-deep) 20%, transparent); }
     .portrait::after { content: ""; position: absolute; inset: 14px; border-radius: 156px 156px 8px 8px;
