@@ -7,7 +7,8 @@ A single self-contained static page: no build step, no framework, no runtime dep
 ## Structure
 
 - `index.html` — the entire site (HTML, CSS, and a little vanilla JS)
-- `assets/` — logo files
+- `assets/` — logo files plus `lexa.jpg` (Meet Lexa photo) and `og-image.jpg` (link-preview image). Both must ship with every deploy.
+- `robots.txt`, `sitemap.xml`, `llms.txt` — crawl files for search engines and AI answer engines
 
 ## Run locally
 
