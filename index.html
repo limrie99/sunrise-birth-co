@@ -51,7 +51,7 @@
   <link rel="icon" type="image/png" href="assets/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&family=Outfit:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root {
       --display: 'Jost', sans-serif;
@@ -64,7 +64,7 @@
       --text: #5C4A3A;
       --text-soft: #8A7460;
       --line: rgba(122,68,56,.14);
-      --g1: #FBEEDF; --g2: #F7DBCB; --g3: #F0C6BC;
+      --g1: #FBEEDF;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -72,7 +72,6 @@
     a { text-decoration: none; color: inherit; }
     a:hover { color: var(--accent); }
     img { max-width: 100%; }
-    section { position: relative; }
 
     /* ---------- Nav ---------- */
     .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; transition: all .4s ease;
@@ -157,7 +156,6 @@
       box-shadow: 0 24px 60px color-mix(in srgb, var(--accent-deep) 20%, transparent); }
     .portrait::after { content: ""; position: absolute; inset: 14px; border-radius: 156px 156px 8px 8px;
       border: 1px solid color-mix(in srgb, var(--cream) 60%, transparent); pointer-events: none; }
-    .portrait span { font-family: var(--body); font-size: 12px; letter-spacing: .1em; color: var(--cream); opacity: .8; }
     .about h2 { font-family: var(--display); font-weight: 500; font-size: clamp(28px,3.4vw,40px);
       line-height: 1.15; letter-spacing: -.015em; color: var(--accent-deep); margin: 0 0 24px; }
 
@@ -212,17 +210,10 @@
     .quote-card::before { content: ""; position: absolute; inset: 9px; border: .5px solid var(--accent);
       opacity: .4; pointer-events: none; }
     .quote-mark { font-family: var(--display); font-size: 56px; color: var(--accent); line-height: .5; opacity: .5; margin-bottom: 18px; }
-    .quote-stage { position: relative; min-height: 150px; }
-    .quote { position: absolute; inset: 0; opacity: 0; transition: opacity .7s ease; pointer-events: none; }
-    .quote.active { position: relative; inset: auto; opacity: 1; pointer-events: auto; }
     .quote p { font-family: var(--display); font-size: clamp(20px,2.6vw,27px); line-height: 1.55;
       color: var(--accent-deep); margin: 0 0 28px; }
     .quote .who { font-family: var(--body); font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }
     .quote .detail { font-family: var(--display); font-size: 16px; color: var(--text-soft); margin-top: 4px; }
-    .dots { display: flex; gap: 8px; justify-content: center; margin-top: 32px; }
-    .dots button { width: 8px; height: 8px; border-radius: 100px; border: none; cursor: pointer; padding: 0;
-      background: color-mix(in srgb, var(--accent) 30%, transparent); transition: all .3s ease; }
-    .dots button.active { width: 30px; background: var(--accent); }
 
     /* ---------- Contact ---------- */
     .contact { padding: 130px 40px; background: linear-gradient(180deg,var(--cream) 0%, var(--g1) 100%); }
@@ -444,22 +435,16 @@
       <h2 class="h2" style="text-align:center;margin-bottom:50px;">What mamas are <span class="accent">saying</span></h2>
       <div class="quote-card">
         <div class="quote-mark">“</div>
-        <div class="quote-stage" id="quoteStage">
-          <div class="quote active">
-            <p>Having Lexa as my doula was so fun and reassuring! She helped coach my husband through supportive positions, played games with us, drove us to the birthing center, and prayed over me as I roared my baby down. Lexa's tone of voice — as she reminded me to breathe — made me feel like she understood what I was going through, how hard it was to be having this baby, but she also believed in me! Not once did I feel unseen, unheard or misunderstood by her! Lexa carries peace and offers confidence! I would recommend her to all my pregnant mommas!</p>
-            <div class="who">Mekala</div>
-            <div class="detail">Birth center mama</div>
-          </div>
-          <div class="quote">
-            <p>Having Lexa as my doula was the best decision I made for my first birth. She was so encouraging and kept me calm when I felt the panic setting in! Every time I doubted myself, she helped me feel like I could do it. As a first time mom, I had no idea what to expect and Lexa made it so peaceful. I cannot recommend her enough!!</p>
-            <div class="who">Lauren N.</div>
-            <div class="detail">First-time mama</div>
-          </div>
+        <div class="quote">
+          <p>Having Lexa as my doula was so fun and reassuring! She helped coach my husband through supportive positions, played games with us, drove us to the birthing center, and prayed over me as I roared my baby down. Lexa's tone of voice — as she reminded me to breathe — made me feel like she understood what I was going through, how hard it was to be having this baby, but she also believed in me! Not once did I feel unseen, unheard or misunderstood by her! Lexa carries peace and offers confidence! I would recommend her to all my pregnant mommas!</p>
+          <div class="who">Mekala</div>
+          <div class="detail">Birth center mama</div>
         </div>
-      </div>
-      <div class="dots" id="dots">
-        <button class="active" aria-label="Testimonial 1"></button>
-        <button aria-label="Testimonial 2"></button>
+        <div class="quote">
+          <p>Having Lexa as my doula was the best decision I made for my first birth. She was so encouraging and kept me calm when I felt the panic setting in! Every time I doubted myself, she helped me feel like I could do it. As a first time mom, I had no idea what to expect and Lexa made it so peaceful. I cannot recommend her enough!!</p>
+          <div class="who">Lauren N.</div>
+          <div class="detail">First-time mama</div>
+        </div>
       </div>
     </div>
   </section>
@@ -535,19 +520,6 @@
 
     // Hero reveal
     requestAnimationFrame(() => setTimeout(() => document.getElementById('home').classList.add('show'), 80));
-
-    // Testimonial carousel
-    const quotes = [...document.querySelectorAll('#quoteStage .quote')];
-    const dots = [...document.querySelectorAll('#dots button')];
-    let idx = 0, timer;
-    function show(n) {
-      idx = (n + quotes.length) % quotes.length;
-      quotes.forEach((q, i) => q.classList.toggle('active', i === idx));
-      dots.forEach((d, i) => d.classList.toggle('active', i === idx));
-    }
-    function start() { timer = setInterval(() => show(idx + 1), 6500); }
-    dots.forEach((d, i) => d.addEventListener('click', () => { clearInterval(timer); show(i); start(); }));
-    start();
 
     // Contact form
     const inquiryForm = document.getElementById('inquiryForm');
