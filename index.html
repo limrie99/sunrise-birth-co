@@ -129,9 +129,10 @@
       font-family: var(--body); font-size: 11px; letter-spacing: .25em; text-transform: uppercase;
       color: var(--accent-deep); opacity: .7; }
 
-    /* fade-in */
+    @media (scripting: enabled) and (prefers-reduced-motion: no-preference) {
     .fade { opacity: 0; transform: translateY(24px); transition: all .9s cubic-bezier(.2,.7,.2,1); }
     .hero.show .fade { opacity: 1; transform: translateY(0); }
+    }
     .hero.show .d05 { transition-delay: .05s; }
     .hero.show .d15 { transition-delay: .15s; }
     .hero.show .d30 { transition-delay: .30s; }
