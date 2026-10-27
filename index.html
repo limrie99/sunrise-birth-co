@@ -70,7 +70,6 @@
     img { max-width: 100%; }
     section { position: relative; }
 
-    /* ---------- Nav ---------- */
     .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; transition: all .4s ease;
       background: transparent; border-bottom: 1px solid transparent; }
     .nav.scrolled { background: color-mix(in srgb, var(--cream) 90%, transparent);
@@ -214,7 +213,6 @@
       background: color-mix(in srgb, var(--accent) 30%, transparent); transition: all .3s ease; }
     .dots button.active { width: 30px; background: var(--accent); }
 
-    /* ---------- Contact ---------- */
     .contact { padding: 130px 40px; background: linear-gradient(180deg,var(--cream) 0%, var(--g1) 100%); }
     .contact-grid { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr;
       gap: 72px; align-items: start; }
@@ -226,7 +224,7 @@
     .contact-info .val { font-family: var(--display); font-size: 18px; color: var(--accent-deep); }
     form.inquiry { display: grid; gap: 16px; background: var(--cream); border: 1px solid var(--line);
       border-radius: 10px; padding: 36px; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: end; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
     .inquiry label { display: grid; }
     .inquiry input, .inquiry select, .inquiry textarea { width: 100%; padding: 14px 18px;
       font-family: var(--body); font-size: 15px; color: var(--text); background: var(--cream);
@@ -469,7 +467,10 @@
               <span>Name</span>
               <input placeholder="Your name" required name="name">
             </label>
-            <input type="email" placeholder="Email" required name="email">
+            <label>
+              <span>Email</span>
+              <input type="email" placeholder="Email" required name="email">
+            </label>
           </div>
           <div class="form-row">
             <label>
@@ -526,7 +527,6 @@
     burger.addEventListener('click', () => menu.classList.toggle('open'));
     menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
 
-    // Hero reveal
     requestAnimationFrame(() => setTimeout(() => document.getElementById('home').classList.add('show'), 80));
 
     // Testimonial carousel
@@ -542,7 +542,6 @@
     dots.forEach((d, i) => d.addEventListener('click', () => { clearInterval(timer); show(i); start(); }));
     start();
 
-    // Contact form
     const inquiryForm = document.getElementById('inquiryForm');
     inquiryForm.addEventListener('submit', (e) => {
       e.preventDefault();
